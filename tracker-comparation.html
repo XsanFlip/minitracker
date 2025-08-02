@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Interaktif Pelacak Barang Cerdas 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: Calm Harmony (Warm Neutrals with Blue/Green Accents) -->
+    <!-- Application Structure Plan: The application is designed as a narrative journey. It starts with the most critical concept (network size) to set the context. Then, it visually explains the core technology. The main section is an interactive dashboard for direct comparison of specs and features. This is followed by a crucial analysis of security, a key concern from the report. The journey concludes with clear, user-profile-based recommendations, making the report's findings actionable. This structure prioritizes user understanding and decision-making over a linear report format. -->
+    <!-- Visualization & Content Choices: 
+        - Network Size: (Goal: Inform) -> Large stat cards. Justification: High-impact visual to immediately convey the most important factor.
+        - Technology Explanation: (Goal: Organize) -> HTML/CSS diagram. Justification: Visually simplifies a complex process (BLE/UWB vs. Crowdsourced) without violating the NO SVG/Mermaid rule.
+        - Feature Comparison (Range, Battery): (Goal: Compare) -> Bar Charts (Chart.js). Justification: Standard, effective method for comparing single metrics across multiple products.
+        - Ecosystem Analysis: (Goal: Relationships) -> Bubble Chart (Chart.js). Justification: Shows the complex relationship between three key factors: Network Flexibility (X-axis), UWB Precision (Y-axis), and Network Dominance (Bubble Size). This synthesizes a core argument of the report into one graphic.
+        - Platform Dependence: (Goal: Compare) -> Donut Chart (Chart.js). Justification: Clearly shows the proportion of trackers locked into an ecosystem versus those that are cross-platform.
+        - Security Features: (Goal: Compare) -> Styled HTML Table. Justification: Best for presenting multiple categorical features for direct comparison. Uses Unicode icons for scannability.
+        - Recommendations: (Goal: Inform/Organize) -> Styled HTML Cards. Justification: Presents the final conclusions in a user-centric, easily digestible format based on user profiles.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light warm gray */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .section-title {
+            color: #2c3e50; /* Dark Slate Blue */
+        }
+        .section-subtitle {
+            color: #34495e; /* Wet Asphalt */
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold section-title mb-3">Analisis Interaktif Pelacak Barang Cerdas</h1>
+            <p class="text-lg section-subtitle max-w-3xl mx-auto">Membedah teknologi, akurasi, dan keamanan untuk membantu Anda memilih pelacak yang tepat berdasarkan ekosistem Anda.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold section-title">Kekuatan Jaringan: Faktor Penentu Utama</h2>
+                    <p class="mt-2 section-subtitle max-w-2xl mx-auto">Efektivitas pelacak jarak jauh tidak ditentukan oleh jangkauan Bluetooth, melainkan oleh ukuran jaringan *crowdsourced* di belakangnya.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="card bg-[#eaf4f4]">
+                        <p class="text-5xl font-bold text-[#3498db]">1 Miliar+</p>
+                        <p class="mt-2 font-semibold text-[#2980b9]">Perangkat di Jaringan Apple Find My</p>
+                        <p class="text-sm text-gray-600 mt-1">Jaringan terluas, memberikan peluang penemuan tertinggi.</p>
+                    </div>
+                    <div class="card bg-[#fef6e4]">
+                        <p class="text-5xl font-bold text-[#f39c12]">300 Juta+</p>
+                        <p class="mt-2 font-semibold text-[#d35400]">Perangkat di Jaringan Samsung Galaxy Find</p>
+                         <p class="text-sm text-gray-600 mt-1">Kuat di area dengan kepadatan pengguna Samsung tinggi.</p>
+                    </div>
+                    <div class="card bg-[#e8f6ef]">
+                        <p class="text-5xl font-bold text-[#2ecc71]">2 Jaringan</p>
+                        <p class="mt-2 font-semibold text-[#27ae60]">Didukung oleh Mili & TNW (Apple/Google)</p>
+                         <p class="text-sm text-gray-600 mt-1">Fleksibilitas maksimal untuk semua jenis pengguna.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="card">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold section-title">Bagaimana Pelacak Bekerja? Dua Mode Kunci</h2>
+                    <p class="mt-2 section-subtitle">Memahami perbedaan antara pencarian jarak dekat dan pelacakan jarak jauh.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div class="border-2 border-dashed border-[#3498db] p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-[#2980b9] mb-4">1. Pencarian Presisi (Jarak Dekat)</h3>
+                        <div class="flex items-center justify-center space-x-4 text-3xl">
+                            <span title="Ponsel">📱</span>
+                            <span class="text-[#f39c12] font-bold">→</span>
+                            <span class="text-lg font-semibold text-gray-700">UWB / BLE</span>
+                            <span class="text-[#f39c12] font-bold">→</span>
+                            <span title="Pelacak">🏷️</span>
+                        </div>
+                        <p class="mt-4 text-gray-600 text-sm">Saat berada dalam jangkauan, ponsel terhubung langsung ke pelacak menggunakan Bluetooth (BLE) untuk estimasi jarak atau Ultra-Wideband (UWB) untuk panduan arah super akurat hingga sentimeter.</p>
+                    </div>
+                    <div class="border-2 border-dashed border-[#2ecc71] p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-[#27ae60] mb-4">2. Pelacakan Crowdsourced (Jarak Jauh)</h3>
+                        <div class="flex items-center justify-center space-x-2 text-xl md:text-2xl flex-wrap">
+                             <span title="Pelacak">🏷️</span>
+                             <span class="text-[#f39c12] font-bold mx-1">→</span>
+                             <span title="Ponsel Orang Lain">📱</span>
+                             <span class="text-[#f39c12] font-bold mx-1">→</span>
+                             <span title="Cloud">☁️</span>
+                             <span class="text-[#f39c12] font-bold mx-1">→</span>
+                             <span title="Ponsel Anda">📱</span>
+                        </div>
+                        <p class="mt-4 text-gray-600 text-sm">Di luar jangkauan, pelacak mengirim sinyal Bluetooth anonim. Perangkat lain dalam jaringan yang lewat akan menangkap sinyal ini dan melaporkan lokasinya secara aman ke Anda melalui cloud.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center section-title mb-4">Perbandingan Jangkauan Bluetooth (Klaim)</h3>
+                    <p class="text-center section-subtitle mb-4 text-sm">Jangkauan maksimal di ruang terbuka. Kinerja di dunia nyata akan lebih rendah karena halangan.</p>
+                    <div class="chart-container">
+                        <canvas id="rangeChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center section-title mb-4">Estimasi Daya Tahan Baterai</h3>
+                     <p class="text-center section-subtitle mb-4 text-sm">Daya tahan bervariasi tergantung penggunaan. Semua model kecuali TNW menggunakan baterai CR2032 yang dapat diganti.</p>
+                    <div class="chart-container">
+                        <canvas id="batteryChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                 <div class="card">
+                    <h3 class="text-xl font-bold text-center section-title mb-4">Analisis Jaringan & Teknologi Inti</h3>
+                    <p class="text-center section-subtitle mb-4 text-sm">Visualisasi trade-off antara fleksibilitas platform, presisi UWB, dan dominasi jaringan (ukuran gelembung).</p>
+                    <div class="chart-container">
+                        <canvas id="networkBubbleChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-center section-title mb-4">Ketergantungan Ekosistem</h3>
+                    <p class="text-center section-subtitle mb-4 text-sm">Mayoritas pelacak terikat pada ekosistem spesifik untuk performa optimal.</p>
+                    <div class="chart-container">
+                        <canvas id="ecosystemDonutChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 class="text-3xl font-bold text-center section-title mb-8">Perbandingan Fitur Keamanan & Anti-Penguntitan</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b-2 border-gray-300">
+                                <th class="p-3 font-semibold section-title">Fitur</th>
+                                <th class="p-3 text-center font-semibold section-title">AirTag</th>
+                                <th class="p-3 text-center font-semibold section-title">SmartTag2</th>
+                                <th class="p-3 text-center font-semibold section-title">Tile Pro</th>
+                                <th class="p-3 text-center font-semibold section-title">Mili/TNW</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-3 font-medium">Peringatan Otomatis Pelacak Tak Dikenal</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                                <td class="p-3 text-center text-2xl text-yellow-500">🖐️</td>
+                                <td class="p-3 text-center text-2xl text-red-600">❌</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                            </tr>
+                             <tr class="border-b border-gray-200">
+                                <td class="p-3 font-medium">Pemindaian Manual</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="p-3 font-medium">Enkripsi End-to-End</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                                <td class="p-3 text-center text-2xl text-yellow-500">⚠️</td>
+                                <td class="p-3 text-center text-2xl text-green-600">✔️</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-4 text-xs text-gray-500 flex flex-wrap gap-x-4">
+                        <p><span class="font-bold text-green-600">✔️</span>: Otomatis / Penuh</p>
+                        <p><span class="font-bold text-yellow-500">🖐️</span>: Manual / Perlu diaktifkan</p>
+                        <p><span class="font-bold text-yellow-500">⚠️</span>: Enkripsi saat transit, bukan end-to-end</p>
+                        <p><span class="font-bold text-red-600">❌</span>: Tidak ada / Terbatas</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold section-title">Pelacak Mana yang Tepat untuk Anda?</h2>
+                    <p class="mt-2 section-subtitle">Rekomendasi berdasarkan profil pengguna dan ekosistem perangkat Anda.</p>
+                </div>
+                <div class="space-y-6">
+                    <div class="card flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-full md:w-1/4 text-center">
+                            <p class="text-lg font-semibold section-subtitle">Untuk Pengguna</p>
+                            <p class="text-5xl my-2"></p>
+                            <p class="font-bold text-xl section-title">iPhone</p>
+                        </div>
+                        <div class="w-full md:w-3/4">
+                            <h4 class="font-bold text-lg text-[#2980b9]">Pilihan Terbaik: Apple AirTag</h4>
+                            <p class="text-gray-700 mt-1">Integrasi sempurna, akurasi UWB melalui *Precision Finding*, dan jaringan Find My yang tak tertandingi memberikan pengalaman paling andal dan mulus. Ini adalah pilihan *default* yang paling masuk akal.</p>
+                        </div>
+                    </div>
+                     <div class="card flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-full md:w-1/4 text-center">
+                            <p class="text-lg font-semibold section-subtitle">Untuk Pengguna</p>
+                            <p class="text-4xl my-2">SAMSUNG</p>
+                            <p class="font-bold text-xl section-title">Galaxy</p>
+                        </div>
+                        <div class="w-full md:w-3/4">
+                            <h4 class="font-bold text-lg text-[#27ae60]">Pilihan Terbaik: Samsung SmartTag2</h4>
+                            <p class="text-gray-700 mt-1">Sangat direkomendasikan. Integrasi kuat dengan ekosistem Galaxy, pencarian presisi UWB, dan jangkauan Bluetooth yang lebih baik dari AirTag menjadikannya pilihan yang jelas bagi pengguna Samsung.</p>
+                        </div>
+                    </div>
+                     <div class="card flex flex-col md:flex-row items-center gap-6">
+                        <div class="w-full md:w-1/4 text-center">
+                            <p class="text-lg font-semibold section-subtitle">Untuk Pengguna</p>
+                             <p class="text-5xl my-2">🤖</p>
+                            <p class="font-bold text-xl section-title">Android Lain / Multi-Platform</p>
+                        </div>
+                        <div class="w-full md:w-3/4">
+                            <h4 class="font-bold text-lg text-[#d35400]">Pilihan Terbaik: Mili Tag Tracker</h4>
+                            <p class="text-gray-700 mt-1">Pilihan paling fleksibel. Dukungan ganda untuk jaringan Apple Find My *dan* Google Find My Device memberikan kebebasan dari keterikatan ekosistem. Ideal untuk pengguna Android non-Samsung atau keluarga dengan perangkat campuran.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 text-sm text-gray-500 border-t pt-6">
+            <p>Aplikasi interaktif ini dibuat berdasarkan laporan "Perbandingan Komprehensif Penggunaan dan Akurasi Pelacak Barang" per Agustus 2025.</p>
+            <p>Akurasi dan kinerja dapat bervariasi tergantung pada lingkungan dan kepadatan jaringan di lokasi Anda.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: '#2c3e50',
+                        font: {
+                            weight: '600'
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#2c3e50',
+                    titleColor: '#ecf0f1',
+                    bodyColor: '#ecf0f1',
+                    padding: 10,
+                    cornerRadius: 4
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#7f8c8d' },
+                    grid: { color: '#ecf0f1' }
+                },
+                x: {
+                    ticks: { color: '#7f8c8d' },
+                    grid: { display: false }
+                }
+            }
+        };
+
+        const wrapLabel = (label, maxLength) => {
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+        
+        const originalLabels = ['Tile Pro', 'Samsung SmartTag2', 'Apple AirTag', 'Mili Tag Tracker', 'TNW Tag Tracker'];
+        const wrappedLabels = originalLabels.map(label => wrapLabel(label, 16));
+
+        new Chart(document.getElementById('rangeChart'), {
+            type: 'bar',
+            data: {
+                labels: wrappedLabels,
+                datasets: [{
+                    label: 'Jangkauan (meter)',
+                    data: [152, 120, 100, 100, 50],
+                    backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                    borderColor: '#2980b9',
+                    borderWidth: 2
+                }]
+            },
+            options: { ...commonChartOptions }
+        });
+
+        new Chart(document.getElementById('batteryChart'), {
+            type: 'bar',
+            data: {
+                labels: wrappedLabels,
+                datasets: [{
+                    label: 'Daya Tahan (hari)',
+                    data: [365, 500, 365, 240, 365],
+                    backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                    borderColor: '#27ae60',
+                    borderWidth: 2
+                }]
+            },
+            options: { ...commonChartOptions }
+        });
+
+        new Chart(document.getElementById('ecosystemDonutChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Tergantung Ekosistem (Apple/Samsung)', 'Lintas Platform (Tile)', 'Multi-Jaringan (Mili/TNW)'],
+                datasets: [{
+                    data: [2, 1, 2],
+                    backgroundColor: ['#34495e', '#3498db', '#f39c12'],
+                    hoverOffset: 4,
+                    borderColor: '#f8f9fa',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#2c3e50', font: { weight: '600' } }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        },
+                        backgroundColor: '#2c3e50',
+                        titleColor: '#ecf0f1',
+                        bodyColor: '#ecf0f1',
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('networkBubbleChart'), {
+            type: 'bubble',
+            data: {
+                labels: originalLabels,
+                datasets: [{
+                    label: 'Apple AirTag',
+                    data: [{ x: 8, y: 9, r: 25 }], // Platform: 8 (sedikit fleksibel via NFC), Presisi: 9, Jaringan: 25 (dominan)
+                    backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                }, {
+                    label: 'Samsung SmartTag2',
+                    data: [{ x: 7, y: 9.5, r: 18 }], // Platform: 7 (terkunci), Presisi: 9.5 (sangat tinggi), Jaringan: 18 (besar)
+                    backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                }, {
+                    label: 'Tile Pro',
+                    data: [{ x: 9, y: 4, r: 10 }], // Platform: 9 (lintas platform), Presisi: 4 (tanpa UWB), Jaringan: 10 (lebih kecil)
+                    backgroundColor: 'rgba(149, 165, 166, 0.7)',
+                }, {
+                    label: 'Mili Tag Tracker',
+                    data: [{ x: 10, y: 5, r: 20 }], // Platform: 10 (multi-jaringan), Presisi: 5 (tanpa UWB), Jaringan: 20 (gabungan)
+                    backgroundColor: 'rgba(243, 156, 18, 0.7)',
+                }, {
+                    label: 'TNW Tag Tracker',
+                    data: [{ x: 8.5, y: 5, r: 22 }], // Platform: 8.5 (fokus Apple), Presisi: 5 (tanpa UWB), Jaringan: 22 (mengandalkan Apple)
+                    backgroundColor: 'rgba(211, 84, 0, 0.7)',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                         callbacks: {
+                            label: function(context) {
+                                let label = context.chart.data.labels[context.dataIndex] || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                label += `(Fleksibilitas: ${context.parsed.x}, Presisi: ${context.parsed.y})`;
+                                return label;
+                            },
+                            title: function() { return ''; }
+                        },
+                        backgroundColor: '#2c3e50',
+                    }
+                },
+                scales: {
+                    y: {
+                        title: { display: true, text: 'Akurasi Presisi (UWB)', color: '#2c3e50', font: { weight: 'bold' } },
+                        min: 3, max: 10,
+                        ticks: { color: '#7f8c8d' },
+                        grid: { color: '#ecf0f1' }
+                    },
+                    x: {
+                        title: { display: true, text: 'Fleksibilitas Platform & Jaringan', color: '#2c3e50', font: { weight: 'bold' } },
+                        min: 6, max: 11,
+                        ticks: { color: '#7f8c8d' },
+                        grid: { color: '#ecf0f1' }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
